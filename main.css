@@ -5,21 +5,30 @@ body {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     background-size: cover;
 }
+header ul {
+    text-align: right;
+    margin-top: 50px
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 header {
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  padding: 30px 0;
+}
+
+main {
   text-align: center;
 }
-.quizStart {
-  text-align: center;
-  padding: 30px;
-}
+
 .logo {
   padding: 30px;
 }
+
 header ul li {
     padding: 10px 20px;
     list-style: none;
@@ -27,6 +36,9 @@ header ul li {
     font-size: 20px;
     text-transform: uppercase;
     display: inline;
+}
+.question span {
+  text-align: left;
 }
 .startButton {
     padding: 20px;
@@ -40,6 +52,7 @@ header ul li {
     transition: all 0.3s ease;
     margin-top: 40px
 }
+
 label {
     padding: 20px;
     margin-bottom: 10px;
@@ -62,6 +75,13 @@ button {
     transition: all 0.3s ease;
     margin-top: 40px;
 }
+button:hover , button:focus {
+  background-color: white;
+  color: black;
+}
+.submitButton {
+  margin-bottom: 50px;
+}
 .correctFeedback {
     display: block;
     margin: 0 auto;
@@ -79,22 +99,169 @@ button {
     margin-right: 20px
 }
 
-.correctFeedback img {
-    width: 150px;
-    height: auto;
-    display: block;
-    border-radius: 50%;
-    background-color: #38A9AF;
-    margin: auto;
-    padding: 10px;
-    margin-bottom: 20px
-}
-main {
-  text-align: center;
-}
 h2 {
     text-align: left;
     margin-bottom: 40px;
     color: #ffffff;
-    text-transform: uppercase
+    text-transform: uppercase;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.questionAnswerForm {
+  display: none;
+}
+
+.correctFeedback span {
+    color: rgb(255, 153, 0);
+}
+
+.correctFeedback {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background: rgb(142, 209, 125);
+    padding-top: 40px
+}
+
+.correctFeedback button {
+    width: 100%
+}
+.correctFeedback p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    margin-left: 20px;
+    margin-right: 20px
+}
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ffffff;
+    transition: 0.2s all linear;
+    outline: none;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+}
+input:checked {
+    border: 8px solid #ebca52;
+}
+input[type=radio] {
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+
+fieldset {
+  border: none;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+label {
+    padding: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    line-height: 22px;
+    background-color: #38A9AF
+}
+label:hover, label:focus {
+    background-color: #AF6438
+}
+header::before,
+header::after {
+    display: table;
+    content: '';
+}
+header::after {
+    clear: both;
+}
+.icon,
+.scoreBoard {
+    float: left;
+    padding-left: 1.04166666%;
+    padding-right: 1.04166666%;
+}
+.icon {
+    width: 33.33%
+}
+.scoreBoard {
+    width: 66.67%
+}
+.logo {
+    height: 250px;
+    width: 250px;
+}
+
+
+@media screen and (max-width: 1190px) {
+    .questionAnswerForm,
+    .quizStart {
+        padding: 50px;
+        margin-bottom: 100px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .logo {
+        width: 225px;
+        height: 225px;
+        display: block;
+        margin: auto;
+    }
+    header ul {
+        margin: 10px;
+        text-align: center
+    }
+    h1 {
+        font-size: 1.5em
+    }
+    header ul li {
+        padding: 10px;
+        font-size: 18px
+    }
+    .icon,
+    .scoreBoard {
+        width: 100%
+    }
+    .quizStart {
+        width: 100%;
+        padding: 40px;
+        margin-top: 0
+    }
+    h2 {
+        font-size: 18px
+    }
+    .questionAnswerForm {
+        width: 100%;
+        padding: 20px;
+        margin-top: 0
+    }
+    label {
+        font-size: 16px;
+        padding: 15px
+    }
+    .correctFeedback img {
+        width: 100px;
+        height: auto
+    }
+    .correctFeedback p {
+        font-size: 16px;
+        margin: 0 15px
+    }
+    .results p:first-of-type {
+        font-size: 18px
+    }
+    h3 {
+        font-size: 25px
+    }
 }
